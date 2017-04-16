@@ -1,0 +1,61 @@
+.progressbar {
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+    margin:30rpx auto;
+    height:90rpx;
+}
+.progressbar .step {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    width: 25%;
+    float: left;
+    position: relative;
+}
+.progressbar .step:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 70rpx;
+    line-height: 70rpx;
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    background: #9B9B9B;
+    border-radius: 50rpx;
+    margin: 0 auto 5rpx auto;
+    text-align: center;
+    border: 10rpx solid #D8D8D8;
+}
+/*progressbar connectors*/
+.progressbar .step:after {
+    content: '';
+    width: 100%;
+    height: 15rpx;
+    background: #D8D8D8;
+    position: absolute;
+    left: -50%;
+    top: 35rpx;
+    z-index: -1; /*put it behind the numbers*/
+}
+.progressbar .step:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+.progressbar .step.active:before, 
+.progressbar .step.active:after{
+    background: #4A86E8;
+    color: white;
+}
+.clear{
+    clear: both;
+}
+.page__hd{
+    background-color:#4A86E8;
+    padding:20rpx;
+    font-size: 18px;
+    font-weight: bold;
+    color:#fff;
+}

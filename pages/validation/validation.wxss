@@ -1,0 +1,34 @@
+.validateContent{
+    margin: 0 20rpx;
+}
+.tab{
+    display: flex;
+    justify-content:center;
+}
+.tab .validateType{
+    background-color: lightgrey;
+    text-align: center;
+    flex:1;
+    padding: 25rpx 0;
+}
+.tab .validateType.active{
+    background-color: white;
+    flex:1;
+}
+.info{
+    color: #757575;
+    text-indent: 1em;
+    line-height:45rpx; 
+    margin: 20rpx auto;
+}
+.radio-group{
+    margin-left: 1em;
+}
+.radio-group .radio{
+    display: block;
+    line-height: 80rpx;
+}
+.link{
+    text-decoration: underline;
+    color: #4A86E8;
+}

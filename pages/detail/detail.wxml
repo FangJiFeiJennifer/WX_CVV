@@ -1,0 +1,60 @@
+<!--pages/detail/detail.wxml-->
+
+<view class="container">
+  <view class="header"> 
+      <progress percent="80" stroke-width="12" color="cornflowerblue"  class="progress-slider" active />
+      <view class= "flex-cycle">
+        <view class="flex-wrp" >
+          <view class="circle show-item1">1</view>
+        </view>
+        <view class="flex-wrp">
+          <view class="circle show-item2">2</view>
+        </view>
+        <view class="flex-wrp">
+          <view class="circle show-item3">3</view>
+        </view>
+        <view class="flex-wrp">
+          <view class="circle show-item4">4</view>
+        </view>
+      </view>
+  </view>
+  <view class="content">
+    <view class="tip-title">
+      <text class= "tip-font"> {{title}}</text>
+    </view>
+    <view class="content-info">
+      <form  class="info-form">
+        <view class="content-title"> ID card</view>
+        <input name="input"  placeholder-style="margin-left:40rpx" placeholder="Select your ID Type* "/>
+        <input name="input"  placeholder-style="margin-left:40rpx" placeholder="ID Number* "/>
+        <input name="input"  placeholder-style="margin-left:40rpx" placeholder="Full name on ID*"/>
+        <button bindtap="choosearea">Select Address</button>
+        <text class="txt" wx:if="{{isHide}}">{{address}}</text>
+        <view class="handle-bar" wx:if="{{isShow}}">
+          <text class="btn cancel" bindtap="cancel">取消</text>
+          <text class="btn confirm" bindtap="confirm">确定</text>
+        </view>
+        <picker-view wx:if="{{isShow}}" class="picker-view" indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+          <picker-view-column>
+            <view wx:for="{{proviceData}}" class="addr-item">{{item}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{cityData}}" class="addr-item">{{item}}</view>
+          </picker-view-column>
+          <picker-view-column wx:if="{{showDistrict}}">
+            <view wx:for="{{districtData}}" class="addr-item">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+        <input name="input"  wx:if="{{isHide}}" placeholder-style="margin-left:40rpx" placeholder="Street address"/>
+        <view class="content-title"> Contact</view>
+        <view class="show-item">
+            <view class="prefix-num">+86</view>
+            <input name="phone number" class="select-input" placeholder="landine phone number*" auto-focus/>
+            <view class="prefix-num">+86</view>
+            <input name="phone number" class="select-input" placeholder="landine phone number*" />
+        </view>
+      </form>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,35 @@
+<import src="../../template/progress/progress.wxml"/>
+<view class="page">
+    <template is="progress" data="{{...headerData}}"/>
+     <view class="videoContent">
+        <view class="prompt">
+            <view class="promptLabel">
+                <view class="icon"></view>
+            </view>
+            <view class="promptText">
+                Make sure you projection is centered inside the guid outline on the screen.
+            </view>
+        </view>
+        <view class="warningInfo">
+            <view wx:for="{{warningInfos}}" wx:key="{{index}}">
+                {{item}}
+            </view>
+        </view>
+        <view class="container">
+            <view class="getVideo {{hideVideoIcon}}" bindtap="openVideo">
+                <image src="../../image/dark-camera.png" />
+            </view>
+            <view class="{{hideVideo}}">
+                <video src="{{videoSource}}"/>
+            </view>
+        </view>
+    </view>
+    <view class="button-sp-area">
+        <view class="double-btn">
+            <button class="weui-btn" type="primary" size="middle" bindtap="toReviewInfo">Next</button>
+        </view>
+        <view class="double-btn">
+            <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">Cancel</button>
+        </view>
+    </view>
+</view>

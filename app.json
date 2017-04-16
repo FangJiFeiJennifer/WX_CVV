@@ -1,0 +1,17 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/info/info",
+    "pages/validation/validation",
+    "pages/record-video/record-video",
+    "pages/review-info/review-info"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#4A86E8",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh": false
+  }
+}

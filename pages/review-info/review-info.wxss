@@ -1,0 +1,45 @@
+.reviewContent{
+    margin: 20rpx;
+}
+.prompt,
+.warningInfo{
+    color: #757575;
+}
+.prompt{
+    display: flex;
+    margin-bottom: 30rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 2px solid lightgrey;
+}
+.prompt .promptLabel{
+    flex: 1;
+}
+.prompt .icon{
+    background-color: #F5A62D;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 22rpx;
+    margin: 8rpx;
+}
+.prompt .promptText{
+    flex: 8;
+}
+.infoHeader{
+    display: flex;
+}
+.infoHeader label{
+    font-size: 18px;
+}
+.infoItem{
+    margin: 20rpx 0;
+    color: #757575;
+    font-size: 15px;
+}
+.imageItem{
+    width: 50%;
+    float: left;
+}
+image{
+    width: 345rpx;
+    height: 305rpx;
+}

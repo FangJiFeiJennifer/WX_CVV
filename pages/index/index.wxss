@@ -1,0 +1,58 @@
+/**index.wxss**/
+.userinfo-avatar {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  padding: 10rpx;
+}
+
+.show-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20rpx 10rpx;
+    font-size: 80%;
+    color: black;
+    font:italic arial,sans-serif;
+}
+
+.line {
+  width: 80%;
+  height: 1px;
+  background-color: grey;
+}
+.line2 {
+  width: 100%;
+  height: 1px;
+  background-color: grey;
+}
+
+.section {
+  padding-top: 15%;
+}
+.img-ico {
+  width:50rpx;					
+  height:50rpx;
+  margin-bottom:30rpx;
+  padding: 50rpx 30rpx 10rpx 80rpx;
+  float:left;
+  font-size: 70%;
+}
+
+.select-input {
+  width: 0 auto;
+  margin-bottom:30rpx;
+  padding: 50rpx 30rpx 10rpx 50rpx;
+
+}
+
+.btn-area{
+  align-items: center;
+  padding: 70rpx 50rpx 50rpx 50rpx;
+}

@@ -1,0 +1,12 @@
+<template name="progress">
+    <view class="progressbar">
+        <block wx:for="{{steps}}" wx:key="{{index}}">
+            <view class="step active" wx:if="{{index < active}}"></view>
+            <view class="step" wx:else></view>
+        </block>
+    </view>
+    <view class="clear"></view>
+    <view class="page__hd">
+        {{title}}
+    </view>
+</template>

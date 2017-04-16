@@ -1,0 +1,76 @@
+<import src="../../template/progress/progress.wxml"/>
+<view class="page">
+    <template is="progress" data="{{...headerData}}"/>
+    <view class="page__bd">
+        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">Error Info</view>
+
+        <view class="weui-cells__title">iCard</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindIDTypeChange" value="{{idTypeIndex}}" range="{{idType}}">
+                        <view class="weui-select">{{idType[idTypeIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="ID Number*" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="Full name on ID*" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd province_city">
+                    <picker bindchange="bindProvinceChange" value="{{provinceIndex}}" range="{{provinces}}">
+                        <view class="weui-select">{{provinces[provinceIndex]}}</view>
+                    </picker>
+                    <picker bindchange="bindIDTypeChange" value="{{idTypeIndex}}" range="{{idType}}">
+                        <view class="weui-select">{{idType[idTypeIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="Street adress" />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">Contact</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd" style="width: 105px">
+                    <picker bindchange="bindCountryCodeChange" value="{{countryCodeIndex}}" range="{{countryCodes}}">
+                        <view class="weui-select">{{countryCodes[countryCodeIndex]}}</view>
+                    </picker>
+                </view>
+                <view class="weui-cell__bd weui-cell__bd_in-select-before">
+                    <input class="weui-input" placeholder="Landline phone number*" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd" style="width: 105px">
+                    <picker bindchange="bindCountryCodeChange" value="{{countryCodeIndex}}" range="{{countryCodes}}">
+                        <view class="weui-select">{{countryCodes[countryCodeIndex]}}</view>
+                    </picker>
+                </view>
+                <view class="weui-cell__bd weui-cell__bd_in-select-before">
+                    <input class="weui-input" placeholder="Landline phone number*" />
+                </view>
+            </view>
+        </view>
+
+        <view class="button-sp-area">
+            <view class="double-btn">
+                <button class="weui-btn" type="primary" size="middle" bindtap="toValidation">Next</button>
+            </view>
+            <view class="double-btn">
+                <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">Cancel</button>
+            </view>
+        </view>
+    </view>
+</view>

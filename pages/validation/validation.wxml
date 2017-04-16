@@ -1,0 +1,30 @@
+<import src="../../template/progress/progress.wxml"/>
+<view class="page">
+    <template is="progress" data="{{...headerData}}"/>
+    <view class="validateContent">
+        <view class="tab">
+            <view class="validateType active">Validate by phone</view>
+            <view class="validateType">Validate by SMS</view>
+        </view>
+        <view class="info">
+            Select a phone number to receive the PIN number
+        </view>
+        <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{phoneNumber}}" wx:key="{{index}}">
+                <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </radio-group>
+        <view class="info">
+            To call a different phone number, please edit your info 
+            <span class="link" bindTap="editInfo">here</span>
+        </view>
+    </view>
+    <view class="button-sp-area">
+        <view class="double-btn">
+            <button class="weui-btn" type="primary" size="middle" bindtap="toRecordVideo">Next</button>
+        </view>
+        <view class="double-btn">
+            <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">Cancel</button>
+        </view>
+    </view>
+</view>

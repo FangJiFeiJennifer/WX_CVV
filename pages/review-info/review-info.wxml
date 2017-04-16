@@ -1,0 +1,35 @@
+<import src="../../template/progress/progress.wxml"/>
+<view class="page">
+    <template is="progress" data="{{...headerData}}"/>
+    <view class="reviewContent">
+        <view class="prompt">
+            <view class="promptLabel">
+                <view class="icon"></view>
+            </view>
+            <view class="promptText">
+                Your request might be rejected if the info you input is incorrect or the video is blurring.
+            </view>
+        </view>
+        <view class="infoHeader">
+            <view class="label">Your information</view>
+            <view class="editIcon"></view>
+        </view>
+        <view class="infoItem" wx:for="{{infos}}" wx:key="info{{index}}">
+            <view>{{item.key}}</view>
+            <view>{{item.value}}</view>
+        </view>
+        <view class="video-images">
+            <view class="imageItem" wx:for="{{images}}" wx:for-item="imageItem" wx:key="{{index}}">
+                <image class="image" mode="scaleToFill" src="{{imageItem.src}}" />
+            </view>
+        </view>
+    </view>
+    <view class="button-sp-area">
+        <view class="double-btn">
+            <button class="weui-btn" type="primary" size="middle" bindtap="toReviewInfo">Next</button>
+        </view>
+        <view class="double-btn">
+            <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">Cancel</button>
+        </view>
+    </view>
+</view>
