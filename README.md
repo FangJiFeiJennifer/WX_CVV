@@ -1,32 +1,5 @@
-<<<<<<< HEAD
-#WX_CVV
-=======
-# CVV
->>>>>>> 06a551d66d28357752d11458b6f6ab088e5c2ed7
+## WX_CVV 是为eBay的用户提供视频验证的一个小工具
+> Project Name: WX_CVV
+> Code URL: https://github.com/FangJiFeiJennifer/WX_CVV.git
 
-1. install wechat devtool 0.14.140900
-2.  AppID(小程序ID）：wx7e9b4e2cf6af4018
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### AppID: wx7e9b4e2cf6af4018
