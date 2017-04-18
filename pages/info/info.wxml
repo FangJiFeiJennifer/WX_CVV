@@ -1,4 +1,5 @@
 <import src="../../template/progress/progress.wxml"/>
+<import src="../../template/citySelect/citySelect.wxml" />
 <view class="page">
     <template is="progress" data="{{...headerData}}"/>
     <view class="page__bd">
@@ -23,16 +24,8 @@
                     <input class="weui-input" placeholder="Full name on ID*" />
                 </view>
             </view>
-            <view class="weui-cell weui-cell_select">
-                <view class="weui-cell__bd province_city">
-                    <picker bindchange="bindProvinceChange" value="{{provinceIndex}}" range="{{provinces}}">
-                        <view class="weui-select">{{provinces[provinceIndex]}}</view>
-                    </picker>
-                    <picker bindchange="bindIDTypeChange" value="{{idTypeIndex}}" range="{{idType}}">
-                        <view class="weui-select">{{idType[idTypeIndex]}}</view>
-                    </picker>
-                </view>
-            </view>
+            
+            <template is="addressPicker" data="{{ ...city }}"/>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__bd">
                     <input class="weui-input" placeholder="Street adress" />

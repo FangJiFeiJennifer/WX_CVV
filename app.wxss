@@ -14,6 +14,28 @@
 .page{
     font-size: 16px;
 }
+.weui-cells{
+    font-size: 16px;
+}
+.weui-cells::after{
+    border-bottom: transparent;
+}
+.weui-cells::before{
+    border-top: transparent;
+}
+.weui-cell{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 20rpx;
+}
+.weui-cell::before {
+    border-top: transparent;
+}
+.weui-cells__title{
+    margin-bottom: .5em;
+    font-weight: bold;
+    color:black;
+}
 button[type='primary']{
   background-color: #4A86E8;  
 }

@@ -1,0 +1,27 @@
+<import src="../../template/progress/progress.wxml"/>
+<view class="page">
+    <template is="progress" data="{{...headerData}}"/>
+    <view class="validateContent">
+        <view class="weui-cells__title">Enter your PIN number</view>
+        <view class="info">
+            Please input the PIN number that you got via phone call or SMS /Text Message
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="Please input the 5-digit PIN" />
+            </view>
+        </view>
+        <view class="info">
+            Note : you could request a new PIN number after 53 seconds from
+            <span class="link" bindTap="requestNewPinNum">here</span>
+        </view>
+    </view>
+    <view class="button-sp-area">
+        <view class="double-btn">
+            <button class="weui-btn" type="primary" size="middle" bindtap="toRecordVideo">Next</button>
+        </view>
+        <view class="double-btn">
+            <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">Cancel</button>
+        </view>
+    </view>
+</view>

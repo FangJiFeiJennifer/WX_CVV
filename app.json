@@ -1,9 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/detail/detail",
     "pages/info/info",
     "pages/validation/validation",
+    "pages/enter-pin/enter-pin",
     "pages/record-video/record-video",
     "pages/review-info/review-info"
   ],

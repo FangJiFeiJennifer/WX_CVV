@@ -1,0 +1,24 @@
+
+.city-select-wrap{
+  display:flex;
+  margin: 20rpx;
+  height:100%;
+  align-items: center;
+  justify-content: center
+}
+.city-select-view{
+  width:100%;
+  height:2.58823529em;
+  min-height:2.58823529em;
+  line-height:2.58823529em;
+  border: 1px solid lightgrey;
+}
+.city-select-view:first-child{
+  border-radius: 5px 0 0 5px;
+}
+.city-select-view:last-child{
+  border-radius: 0 5px 5px 0;
+}
+.city-select-text{
+  text-align:center;
+}

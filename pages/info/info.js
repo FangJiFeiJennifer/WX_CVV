@@ -1,15 +1,10 @@
+var citySelect = require('../../template/citySelect/citySelect');
 Page({
     data: {
         showTopTips: false,
 
         idType: ["ID Card", "Passport", "Residence permit"],
         idTypeIndex: 0,
-
-        provinces: ["Hubei", "Hunan", "Henan"],
-        provinceIndex: 0,
-
-        cities: ["Shanghai", "Wuhan", "Yantai"],
-        cityIndex: 0,
 
         countryCodes: ["+86", "+80", "+84", "+87"],
         countryCodeIndex: 0,
@@ -19,6 +14,10 @@ Page({
             steps: [1,2,3,4],
             active: 1
         }
+    },
+    onLoad: function(){
+        var that = this
+        citySelect.init(that)
     },
     bindIDTypeChange: function(e) {
         this.setData({

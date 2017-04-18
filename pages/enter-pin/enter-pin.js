@@ -10,9 +10,9 @@ Page({
           {name: 'phone2', value: '+86-17602126553'}
         ]
     },
-    toPinPage: function() {
+    toRecordVideo: function() {
         wx.navigateTo({
-          url: '../enter-pin/enter-pin',
+          url: '../record-video/record-video',
           success: function(res){
             // success
           },
@@ -23,5 +23,8 @@ Page({
             // complete
           }
         })
+    },
+    requestNewPinNum : function(e) {
+        
     }
 })

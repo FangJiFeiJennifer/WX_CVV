@@ -38,7 +38,7 @@ Page({
         wx.navigateTo({
           url: '../review-info/review-info',
           success: function(res){
-            // success
+            console.log("Success");
           },
           fail: function() {
             // fail

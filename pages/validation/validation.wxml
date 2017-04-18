@@ -21,7 +21,7 @@
     </view>
     <view class="button-sp-area">
         <view class="double-btn">
-            <button class="weui-btn" type="primary" size="middle" bindtap="toRecordVideo">Next</button>
+            <button class="weui-btn" type="primary" size="middle" bindtap="toPinPage">Next</button>
         </view>
         <view class="double-btn">
             <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">Cancel</button>

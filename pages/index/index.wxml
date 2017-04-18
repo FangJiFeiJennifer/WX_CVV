@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container userinfo">
-    <image class="userinfo-avatar" src="../../image/CVV icon without effect.png" background-size="cover" bindtap="navigateTo"></image>
+    <image class="userinfo-avatar" src="../../image/CVV icon without effect.png" background-size="cover"></image>
     <text class="show-item">{{mainTitle[0]}} {{mainTitle[1]}} {{mainTitle[2]}}</text>
     <canvas canvas-id="firstCanvas" class="line"></canvas>
     <text class="userinfo-nickname">{{viceTitle}}</text>

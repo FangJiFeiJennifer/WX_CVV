@@ -1,16 +1,1 @@
-.weui-cells{
-    font-size: 16px;
-}
-
-.province_city{
-    display: flex;
-}
-
-.province_city > picker{
-    flex: 1;
-}
-.weui-cells__title{
-    margin-bottom: .5em;
-    font-weight: bold;
-    color:black;
-}
+@import '../../template/citySelect/citySelect.wxss';

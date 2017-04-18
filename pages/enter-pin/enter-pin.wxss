@@ -1,0 +1,17 @@
+.validateContent{
+    margin: 0 20rpx;
+}
+
+.info{
+    color: #757575;
+    text-indent: 1em;
+    line-height:45rpx; 
+    margin: 20rpx auto;
+}
+.weui-cell {
+    margin: 50rpx 20rpx;
+}
+.link{
+    text-decoration: underline;
+    color: #4A86E8;
+}
