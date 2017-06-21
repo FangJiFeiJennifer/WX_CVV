@@ -1,17 +1,25 @@
-.validateContent{
-    margin: 0 20rpx;
+.validateContent {
+  margin: 0 20rpx;
 }
 
-.info{
-    color: #757575;
-    text-indent: 1em;
-    line-height:45rpx; 
-    margin: 20rpx auto;
+.info {
+  color: #757575;
+  text-indent: 1em;
+  line-height: 45rpx;
+  margin: 20rpx auto;
 }
+
 .weui-cell {
-    margin: 50rpx 20rpx;
+  margin: 50rpx 20rpx;
 }
-.link{
-    text-decoration: underline;
-    color: #4A86E8;
+
+.link {
+  text-decoration: underline;
+  color: #4a86e8;
+}
+
+navigator {
+  display: inline;
+  color: #4a86e8;
+  text-decoration: underline;
 }

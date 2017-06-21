@@ -1,29 +1,31 @@
+var app = getApp();
 Page({
     data: {
+        content: app.globalData.content,
         headerData: {
-            title: 'Review your info and images',
+            title: app.globalData.content.review_title,
             steps: [1,2,3,4],
             active: 4
         },
         infos: [
             {
-                key: "ID Type",
-                value: "Chinese national ID"
+                key: "证件类型",
+                value: "身份证"
             },
             {
-                key: "ID Number",
+                key: "证件号",
                 value: "152525326462346243"
             },
             {
-                key: "Full name on ID",
+                key: "证件上姓名",
                 value: "Jennifer"
             },
             {
-                key: "Province and city",
+                key: "所在地",
                 value: "xxxxxxxxxxxxxxx"
             },
             {
-                key: "Street address",
+                key: "街道地址",
                 value: "xxxxxxxxxxxxxxxxx"
             }
         ],

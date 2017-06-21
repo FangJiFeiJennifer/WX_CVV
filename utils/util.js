@@ -1,25 +1,25 @@
 import Promise from 'bluebird';
-function formatTime(date) {
-  var year = date.getFullYear()
-  var month = date.getMonth() + 1
-  var day = date.getDate()
 
-  var hour = date.getHours()
-  var minute = date.getMinutes()
-  var second = date.getSeconds()
-
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+/**
+ * 获取名字
+ * @returns {string} province，city，area
+ */
+function getName(obj) {
+  let source;
+  
+  if(obj !== null && obj.data !== null && obj.index !== null) {
+    source = obj.data[obj.index];
+    if(source.name === "市辖区") return "";
+    return source.name;
+  }
+  return "";
 }
 
-function formatNumber(n) {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
-function getDateStr(date) {
-  if (!date) return '';
-  return date.getFullYear() + '年' +  (date.getMonth() + 1) + '月' +date.getDate() + '日';
+/**
+ * 获取地址
+ */
+function address(province, city, district) {
+  return getName(province) + "" + getName(city) + "" + getName(district);
 }
 
 /**
@@ -37,6 +37,17 @@ function log(msg) {
 }
 
 /**
+ * 生成GUID序列号
+ * @returns {string} GUID
+ */
+function guid() {
+  return 'xxxxx'.replace(/[xy]/g, function (c) {
+    let r = Math.random() * 5 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(5);
+  });
+}
+
+/**
  * @param {Function} func 接口
  * @param {Object} options 接口参数
  * @returns {Promise} Promise对象
@@ -51,10 +62,29 @@ function promiseHandle(func, options) {
   });
 }
 
+function fetch(path, params, cb) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `http://${path}`,
+      data: Object.assign({}, params),
+      method: 'Post', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {'Content-Type': 'json'}, // 设置请求的 header
+      success: function(res){
+        // success
+        cb(res.data)
+      },
+      fail: function(res) {
+        // fail
+        console.log('接口错误');
+      }
+    })
+  });
+}
+
 module.exports = {
-  formatTime: formatTime,
+  fetch: fetch,
+  address: address,
   log: log,
-  promiseHandle: promiseHandle,
-  getDateStr: getDateStr,
-  formatNumber: formatNumber
+  guid: guid,
+  promiseHandle: promiseHandle
 }

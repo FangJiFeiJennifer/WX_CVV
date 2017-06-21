@@ -1,30 +1,58 @@
 /**index.js*/
-//获取应用实例
+import {promiseHandle, log, formatNumber, fetch} from '../../utils/util';
+import DataService from  '../../common/DataService';
+import Config from '../../common/Config';
+
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    mainTitle: app.globalData.title,
-    viceTitle : 'Request higher selling limit'
+    content: app.globalData.content,
+    account: app.globalData.content.email_or_username,
+    updatePanelTop: '',
+    select_Prompt: ''
   },
- // 提交表单
+
+  onLoad: function() {
+    let _this = this;
+    promiseHandle(wx.getSystemInfo).then((data) => {
+      console.log(data);
+      _this.setData({
+        updatePanelTop: data.windowHeight
+      });
+    });
+  },
+
+  // 提交表单
   formSubmit: function(e) {
     let inputValue = e.detail.value;
     console.log(inputValue);
-    wx.navigateTo({
-      url: '../info/info'
-    })
-  },
 
-   onLoad: function() {
-    var that = this;
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
+    if (inputValue.username !== '' && inputValue.password !== '') {
+      const params = {username: inputValue.username, password: inputValue.password};
+      fetch(Config.ROOT_KEY.LOGIN, params, function(body) {
+        if(body && body.token) {
+          let promise = new DataService({
+            username: inputValue.username,
+            password: inputValue.password,
+            token: body.token
+          }).save();
+          promise && promise.then(() => {
+            // 验证成功，应该到下一页
+            wx.navigateTo({
+              url: '../info/info?auth_token='+ body.token
+            })
+          });
+       }
+     });
+    } else {
+      let _this = this;
+      // _this.setData({
+      //    placeHolderColor: 'red',
+      //    account: app.globalData.content.account_err
+      // });
+      wx.navigateTo({
+        url: '../info/info?auth_token=1'
       })
-    })
+    }
   }
 })

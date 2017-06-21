@@ -3,28 +3,46 @@
     <template is="progress" data="{{...headerData}}"/>
     <view class="validateContent">
         <view class="tab">
-            <view class="validateType active">Validate by phone</view>
-            <view class="validateType">Validate by SMS</view>
+            <view class="validateType {{active==='phone'?'active':''}}" bindtap="phoneValidate">{{content.phone_validation}}</view>
+            <view class="validateType {{active==='sms'?'active':''}}" bindtap="smsValidate">{{content.sms_validation}}</view>
         </view>
-        <view class="info">
-            Select a phone number to receive the PIN number
-        </view>
-        <radio-group class="radio-group" bindchange="radioChange">
-            <label class="radio" wx:for="{{phoneNumber}}" wx:key="{{index}}">
-                <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-            </label>
-        </radio-group>
-        <view class="info">
-            To call a different phone number, please edit your info 
-            <span class="link" bindTap="editInfo">here</span>
-        </view>
+        <scroll-view class="scroll-view-H" scroll-x="true" scroll-left="{{scrollLeft}}" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <view class="scrollX">
+                <view class="info" style="color: {{promp_color}}">
+                    {{content.select_phone}}
+                </view>
+                <radio-group class="radio-group" bindchange="radioChange">
+                    <label class="radio" wx:for="{{phoneNumber}}" wx:key="{{index}}">
+                        <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.value}}
+                    </label>
+                </radio-group>
+                <view class="info">
+                   {{content.edit_phone_number}}
+                    <navigator  url="../index/index" open-type="redirect" hover-class="other-navigator-hover"> {{content.here}}</navigator>
+                </view>
+            </view>
+            <view class="scrollX">
+                <view class="info">
+                    {{content.select_sms}}
+                </view>
+                <radio-group class="radio-group" bindchange="radioChange">
+                    <label class="radio" wx:for="{{phoneNumber}}" wx:key="{{index}}">
+                        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                    </label>
+                </radio-group>
+                <view class="info">
+                    {{content.edit_phone_number}}
+                    <navigator  url="../index/index" open-type="redirect" hover-class="other-navigator-hover"> {{content.here}}</navigator>
+                </view>
+            </view>
+        </scroll-view>
     </view>
     <view class="button-sp-area">
         <view class="double-btn">
-            <button class="weui-btn" type="primary" size="middle" bindtap="toPinPage">Next</button>
+            <button class="weui-btn" type="primary" size="middle" bindtap="sendPinByCall">{{content.next}}</button>
         </view>
         <view class="double-btn">
-            <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">Cancel</button>
+            <button class="weui-btn" type="default" size="middle" bindtap="redirectToIndex">{{content.cancel}}</button>
         </view>
     </view>
 </view>

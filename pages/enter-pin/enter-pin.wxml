@@ -2,26 +2,27 @@
 <view class="page">
     <template is="progress" data="{{...headerData}}"/>
     <view class="validateContent">
-        <view class="weui-cells__title">Enter your PIN number</view>
+        <view class="weui-cells__title">{{content.enter_pin}}</view>
         <view class="info">
-            Please input the PIN number that you got via phone call or SMS /Text Message
+            {{content.enter_pin_text}}
         </view>
         <view class="weui-cell weui-cell_input">
             <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="Please input the 5-digit PIN" />
+                <input class="weui-input" bindinput="bindInputValue" placeholder="{{enter_pinId}}" placeholder-style="color:{{placeHolderColor}}" />
             </view>
         </view>
         <view class="info">
-            Note : you could request a new PIN number after 53 seconds from
-            <span class="link" bindTap="requestNewPinNum">here</span>
+            {{content.note}}
+            <!--<span class="link" bindTap="requestNewPinNum">{{content.here}}</span>-->
+            <navigator  url="../index/index" open-type="redirect" hover-class="other-navigator-hover"> {{content.here}}</navigator>
         </view>
     </view>
     <view class="button-sp-area">
         <view class="double-btn">
-            <button class="weui-btn" type="primary" size="middle" bindtap="toRecordVideo">Next</button>
+            <button class="weui-btn" type="primary" size="middle" bindtap="toRecordVideo">{{content.next}}</button>
         </view>
         <view class="double-btn">
-            <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">Cancel</button>
+            <button class="weui-btn" type="default" size="middle" bindtap="redirectToIndex">{{content.cancel}}</button>
         </view>
     </view>
 </view>

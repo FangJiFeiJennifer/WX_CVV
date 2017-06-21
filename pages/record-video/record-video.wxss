@@ -1,46 +1,67 @@
 /* pages/record-video/record-video.wxss */
-.videoContent{
-    margin: 20rpx;
+
+.videoContent {
+  margin: 20rpx;
 }
-.prompt,
-.warningInfo{
-    color: #757575;
+
+.prompt, .warningInfo {
+  color: #757575;
 }
-.prompt{
-    display: flex;
-    margin-bottom: 30rpx;
+
+.warningInfo {
+  font-size: 0.9em;
 }
-.prompt .promptLabel{
-    flex: 1;
+
+.prompt {
+  display: flex;
+  margin-bottom: 30rpx;
 }
-.prompt .icon{
-    background-color: #F5A62D;
-    width: 40rpx;
-    height: 40rpx;
-    border-radius: 22rpx;
-    margin: 8rpx;
+
+.prompt .promptLabel {
+  flex: 1;
 }
-.prompt .promptText{
-    flex: 8;
+
+.prompt .icon {
+  background-color: #f5a62d;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 22rpx;
+  margin: 8rpx;
 }
-.container{
-    padding-top: 50rpx; 
+
+.prompt .promptText {
+  flex: 8;
 }
-.getVideo{
-    border: 2px solid lightgrey;
-    border-radius: 10px;
-    padding:50rpx 150rpx;
+
+.container {
+  padding-top: 50rpx;
 }
-.getVideo image{
-    width:300rpx;
-    height:250rpx;
+
+.getVideo {
+  border: 2px solid lightgrey;
+  border-radius: 10px;
+  padding: 50rpx 150rpx;
 }
-video{
-    border-radius: 10px;
+
+.getVideo image {
+  width: 300rpx;
+  height: 250rpx;
 }
-.hideVideoIcon{
-    display: none;
+
+video {
+  border-radius: 10px;
 }
-.hideVideo{
-    display: none;
+
+.hideVideoIcon {
+  display: none;
+}
+
+.hideVideo {
+  display: none;
+}
+
+.section_video {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #d3d3d3;
 }

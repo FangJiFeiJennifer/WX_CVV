@@ -3,9 +3,8 @@
 <view class="page">
     <template is="progress" data="{{...headerData}}"/>
     <view class="page__bd">
-        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">Error Info</view>
-
-        <view class="weui-cells__title">iCard</view>
+        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{content.error_info}}</view>
+        <view class="weui-cells__title">{{content.iCard}}</view>
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_select">
                 <view class="weui-cell__bd">
@@ -16,24 +15,24 @@
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="ID Number*" />
+                    <input class="weui-input" type="idcard" bindinput="bindIdNumber" placeholder-style="color:{{placeHolderColor1}}" placeholder="{{id_number}}" />
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="Full name on ID*" />
+                    <input class="weui-input" type="text" bindinput="bindNameInput"  placeholder-style="color:{{placeHolderColor2}}" placeholder="{{name_on_id}}" />
                 </view>
             </view>
             
-            <template is="addressPicker" data="{{ ...city }}"/>
+            <template is="addressPicker"  data="{{ ...city }}"/>
             <view class="weui-cell weui-cell_input">
                 <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="Street adress" />
+                    <input class="weui-input" type="text" bindinput="bindStreetAddress" placeholder-style="color:{{placeHolderColor3}}" placeholder="{{street_address}}" />
                 </view>
             </view>
         </view>
 
-        <view class="weui-cells__title">Contact</view>
+        <view class="weui-cells__title">{{content.contact}}</view>
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_select">
                 <view class="weui-cell__hd" style="width: 105px">
@@ -42,7 +41,7 @@
                     </picker>
                 </view>
                 <view class="weui-cell__bd weui-cell__bd_in-select-before">
-                    <input class="weui-input" placeholder="Landline phone number*" />
+                    <input class="weui-input" type="number" bindinput="bindSiteNumber" placeholder-style="color:{{placeHolderColor4}}" placeholder="{{site_number}}" />
                 </view>
             </view>
             <view class="weui-cell weui-cell_select">
@@ -52,17 +51,17 @@
                     </picker>
                 </view>
                 <view class="weui-cell__bd weui-cell__bd_in-select-before">
-                    <input class="weui-input" placeholder="Landline phone number*" />
+                    <input class="weui-input" type="number" bindinput="bindPhoneNumber" placeholder-style="color:{{placeHolderColor5}}" placeholder="{{phone_number}}" />
                 </view>
             </view>
         </view>
 
         <view class="button-sp-area">
             <view class="double-btn">
-                <button class="weui-btn" type="primary" size="middle" bindtap="toValidation">Next</button>
+                <button class="weui-btn" type="primary" size="middle" bindtap="toValidation">{{content.next}}</button>
             </view>
             <view class="double-btn">
-                <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">Cancel</button>
+                <button class="weui-btn" type="default" size="middle" bindtap="redirectToIndex">{{content.cancel}}</button>
             </view>
         </view>
     </view>

@@ -1,7 +1,8 @@
 //app.js
 import {log, promiseHandle} from 'utils/util';
-App({
+import { language } from 'common/language';
 
+App({
   getUserInfo(cb) {
     if (typeof cb !== "function") return;
     let that = this;
@@ -18,6 +19,6 @@ App({
   },
   globalData:{
     userInfo:null,
-    title: ["China", "Video", "Verication"]
+    content: language.Chinese
   }
 })

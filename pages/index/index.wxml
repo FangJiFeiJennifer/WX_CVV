@@ -1,21 +1,21 @@
 <!--index.wxml-->
-<view class="container userinfo">
-    <image class="userinfo-avatar" src="../../image/CVV icon without effect.png" background-size="cover"></image>
-    <text class="show-item">{{mainTitle[0]}} {{mainTitle[1]}} {{mainTitle[2]}}</text>
+<view class="container">
+    <image class="app-logo" src="../../image/CVV icon without effect.png" background-size="cover"></image>
+    <text class="show-item">{{content.main_title}}</text>
     <canvas canvas-id="firstCanvas" class="line"></canvas>
-    <text class="userinfo-nickname">{{viceTitle}}</text>
+    <text class="vice-title">{{content.vice_title}}</text>
 </view>
 <form bindsubmit="formSubmit">
   <view class="section">
     <image class="user-icon img-ico" src="../../image/userIcon.png"></image>
-    <input name="username" class="select-input" placeholder="eBay Email or Username" auto-focus/>
+    <input name="username" class="select-input" placeholder-style="color:{{placeHolderColor}}" placeholder="{{account}}" auto-focus/>
     <canvas canvas-id="secondCanvas" class="line2"></canvas>
     <image class="pwd-icon img-ico" src="../../image/pwdIcon.png" ></image>
-    <input name="password" password  class="select-input" placeholder="Password" />
+    <input name="password" password  class="select-input {{select_Prompt}}" placeholder="{{content.password}}" />
     <canvas canvas-id="thirdCanvas" class="line2"></canvas>
   </view>
   <view class="btn-area">
-    <button type="primary" formType="submit">Sign In</button>
+    <button type="primary" formType="submit">{{content.sign_in}}</button>
   </view>
 </form>
 

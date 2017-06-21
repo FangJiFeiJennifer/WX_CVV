@@ -1,17 +1,7 @@
 /**app.wxss**/
 @import "utils/weui.wxss";
 @import 'template/progress/progress.wxss';
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50rpx 0;
-  box-sizing: border-box;
-  font-family: -apple-system-font, 'Helvetica Neue', Helvetica, 'Microsoft YaHei', sans-serif;
-}
-.page{
+page{
     font-size: 16px;
 }
 .weui-cells{
@@ -34,7 +24,11 @@
 .weui-cells__title{
     margin-bottom: .5em;
     font-weight: bold;
+    font-size: 16px;
     color:black;
+}
+button{
+    font-size: 16px;
 }
 button[type='primary']{
   background-color: #4A86E8;  
@@ -56,3 +50,4 @@ button[size="middle"] {
     width: 90%;
     margin:0 5%;
 }
+

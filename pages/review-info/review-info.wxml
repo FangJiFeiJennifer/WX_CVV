@@ -7,11 +7,11 @@
                 <view class="icon"></view>
             </view>
             <view class="promptText">
-                Your request might be rejected if the info you input is incorrect or the video is blurring.
+                {{content.review_note}}
             </view>
         </view>
         <view class="infoHeader">
-            <view class="label">Your information</view>
+            <view class="label">{{content.your_info}}</view>
             <view class="editIcon"></view>
         </view>
         <view class="infoItem" wx:for="{{infos}}" wx:key="info{{index}}">
@@ -26,10 +26,10 @@
     </view>
     <view class="button-sp-area">
         <view class="double-btn">
-            <button class="weui-btn" type="primary" size="middle" bindtap="toReviewInfo">Next</button>
+            <button class="weui-btn" type="primary" size="middle" bindtap="toReviewInfo">{{content.next}}</button>
         </view>
         <view class="double-btn">
-            <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">Cancel</button>
+            <button class="weui-btn" type="default" size="middle" bindtap="showTopTips">{{content.cancel}}</button>
         </view>
     </view>
 </view>
